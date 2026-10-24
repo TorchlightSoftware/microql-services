@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head><title>Nested</title></head>
+<body>
+  <h1>Nested</h1>
+  <div style="height: 60px"></div>
+
+  <!-- this frame's own site, run in its process -->
+  <iframe id="local" src="framed.html" style="width: 300px; height: 150px; margin-left: 30px"></iframe>
+  <!-- the outer page's site (127.0.0.1), in a process apart from this frame's -->
+  <iframe id="inner" style="width: 300px; height: 150px; margin-left: 20px"></iframe>
+
+  <script>
+    document.querySelector('#inner').src = `http://127.0.0.1:${location.port}/framed.html`
+  </script>
+</body>
+</html>

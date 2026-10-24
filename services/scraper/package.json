@@ -1,0 +1,43 @@
+{
+  "name": "@tlsft/microql-svc-scraper",
+  "version": "0.2.0",
+  "description": "A MicroQL service that reads web pages with selectors, and acts on them, in the browser its runtime offers.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "files": [
+    "*.js",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "test:e2e": "node --test test/e2e/*.test.js",
+    "test:live": "node --test test/live/*.test.js"
+  },
+  "keywords": [
+    "microql",
+    "scraper",
+    "cdp"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TorchlightSoftware/microql-services.git",
+    "directory": "services/scraper"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "microql": "^1.5.0"
+  },
+  "devDependencies": {
+    "microql": "file:../../../microql",
+    "puppeteer": "^25.13.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

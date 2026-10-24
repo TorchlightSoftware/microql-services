@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head><title>Framed</title></head>
+<body>
+  <h1>Framed</h1>
+  <button id="press">Press</button>
+  <p id="pressed"></p>
+
+  <input id="name" name="name">
+  <p id="echo"></p>
+
+  <div style="height: 2000px"></div>
+  <p id="bottom">The end</p>
+
+  <script>
+    document.querySelector('#press').addEventListener('click', () => { document.querySelector('#pressed').textContent = 'pressed' })
+    document.querySelector('#name').addEventListener('input', ({target}) => { document.querySelector('#echo').textContent = target.value })
+  </script>
+</body>
+</html>

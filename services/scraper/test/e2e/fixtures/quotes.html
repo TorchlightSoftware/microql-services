@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head><title>Quotes</title></head>
+<body>
+  <h1>Quotes</h1>
+  <a id="next" href="next.html">Next</a>
+
+  <div id="cards">
+    <div class="card"><span class="title">On learning</span> <span class="author">Ada</span></div>
+    <div class="card"><span class="title">On patience</span> <span class="author">Grace</span></div>
+  </div>
+  <button id="more">Load More</button>
+
+  <input id="name" name="name">
+  <p id="echo"></p>
+  <p id="keys"></p>
+
+  <button id="ask">Ask</button>
+  <p id="answer"></p>
+
+  <div id="host"></div>
+
+  <div style="height: 4000px"></div>
+  <p id="bottom">The end</p>
+
+  <script>
+    // a card more, a moment after each click, as a page that loads more would
+    document.querySelector('#more').addEventListener('click', () => setTimeout(() => {
+      const card = document.createElement('div')
+      card.className = 'card'
+      card.innerHTML = '<span class="title">On loading</span> <span class="author">Lin</span>'
+      document.querySelector('#cards').append(card)
+    }, 100))
+
+    document.querySelector('#name').addEventListener('input', (event) => {
+      document.querySelector('#echo').textContent = event.target.value
+    })
+    document.addEventListener('keydown', (event) => {
+      document.querySelector('#keys').textContent += `${event.key} `
+    })
+
+    document.querySelector('#ask').addEventListener('click', () => {
+      document.querySelector('#answer').textContent = confirm('Sure?') ? 'yes' : 'no'
+    })
+
+    document.querySelector('#host').attachShadow({mode: 'open'}).innerHTML = '<p class="inside">In the shadow</p>'
+  </script>
+</body>
+</html>

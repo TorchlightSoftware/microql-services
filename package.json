@@ -1,0 +1,29 @@
+{
+  "name": "microql-services",
+  "private": true,
+  "description": "Published MicroQL services, each a working service and an example of how to write one.",
+  "type": "module",
+  "workspaces": [
+    "services/*"
+  ],
+  "scripts": {
+    "test": "npm test --workspaces",
+    "test:e2e": "npm run test:e2e --workspaces --if-present",
+    "test:live": "npm run test:live --workspaces --if-present",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TorchlightSoftware/microql-services.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "@stylistic/eslint-plugin": "^5.2.0",
+    "eslint": "^9.31.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
